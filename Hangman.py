@@ -29,7 +29,9 @@ while True:
                 print("You must quess a", len(word),"letter word.")
                 times+=1
                 print("======================================")
-                print(name)
+                for i in name:
+                    print(i, sep ='', end =' ')
+                print()
             letter = input("Player 2, please quess a letter:")
             try:
                 if len(letter) != 1:
@@ -127,7 +129,9 @@ while True:
                     check=check.replace(letter,"")
                     print("\n===== Correct quess!",len(check),"letters remaining!")
                     # print("   "+("_ "*len(word)))
-                    print(name)
+                    for i in name:
+                        print(i, sep='', end=' ')
+                    print()
                     if orig_quess_num == 6 and quess_num == 5:
                         print('   ______')
                         print('   |     |')
