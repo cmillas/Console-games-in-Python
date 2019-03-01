@@ -71,13 +71,13 @@ def hang(guess_num):
 def name_print(name):
     print()
     for i in name:
-        print(i, sep='', end=' ')
+        print(i, end=' ')
     print()
 
 def wrong_print(wrong):
     print("\nYou already guessed wrong:")
     for j in wrong:
-        print(j, sep=' , ', end=' ')
+        print(j, end=' ')
     print()
 
 
