@@ -2,68 +2,56 @@
 import time
 import getpass
 
+def printer(guess_num,a):
+    i = 0
+    while i < 7:
+        if i == 0:
+            print(' '*3 + '_'*6)
+            print(' ' * 3 + '|' + ' ' * 5 + '|')
+        if i == 6:
+            print(' ' * 9 + '|' )
+            print(' ' + '=' * 8)
+        if i == guess_num:
+            print(a)
+
+        i += 1
+
 def hang(guess_num):
     ''' return a graphic representation of the hang'''
     if guess_num == 5:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('         |')
-        print('         |')
-        print('         |')
-        print('         |')
-        print(' ========|')
-        print("===== You have", guess_num, "guesses left!")
+        a= '   @     |'
+        printer(guess_num, a)
+        print("===== You have", guess_num, "guesses left! ========")
     elif guess_num == 4:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('  |      |')
-        print('         |')
-        print('         |')
-        print('         |')
-        print(' ========|')
-        print("===== You have", guess_num, "guesses left!")
+        a = '''   @     |
+  |      |'''
+        printer(guess_num, a)
+        print("===== You have", guess_num, "guesses left! ========")
     elif guess_num == 3:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('  | |    |')
-        print('         |')
-        print('         |')
-        print('         |')
-        print(' ========|')
-        print("===== You have", guess_num, "guesses left!")
+        a = '''   @     |
+  | |    |'''
+        printer(guess_num, a)
+        print("===== You have", guess_num, "guesses left! ========")
     elif guess_num == 2:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('  | |    |')
-        print('   |     |')
-        print('         |')
-        print('         |')
-        print(' ========|')
-        print("===== You have", guess_num, "guesses left!")
+        a = '''   @     |
+  | |    |
+   |     |'''
+        printer(guess_num, a)
+        print("===== You have", guess_num, "guesses left! ========")
     elif guess_num == 1:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('  | |    |')
-        print('   |     |')
-        print('  /      |')
-        print('         |')
-        print(' ========|')
-        print("===== You have", guess_num, "guesses left!")
+        a= '''   @     |
+  | |    |
+   |     |
+  /      |'''
+        printer(guess_num, a)
+        print("===== You have", guess_num, "guesses left! ========")
     elif guess_num == 0:
-        print('   ______')
-        print('   |     |')
-        print('   @     |')
-        print('  | |    |')
-        print('   |     |')
-        print('  / \    |')
-        print('         |')
-        print(' ========|')
-        print("\n===== You have", guess_num, "guesses left!")
+        a= '''   @     |
+  | |    |
+   |     |
+  / \    |'''
+        printer(guess_num,a)
+        print("\n===== You have", guess_num, "guesses left! ========")
         print("\n\n============== You lose! ==============")
         print("        The word was:", word + "!         ")
         print("=======================================")
@@ -79,7 +67,6 @@ def wrong_print(wrong):
     for j in wrong:
         print(j, end=' ')
     print()
-
 
 while True:
     try:
